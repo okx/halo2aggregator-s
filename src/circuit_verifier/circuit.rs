@@ -83,6 +83,17 @@ impl<C: CurveAffine> Circuit<C::ScalarExt> for AggregatorCircuit<C> {
                 let cells = self
                     .records
                     .assign_all_opt(&mut region, &base_chip, &range_chip, &select_chip)?;
+                println!("debug agg circuit records");
+                println!("base_adv_record len:{}", self.records.base_adv_record.len());
+                println!("base_fix_record len:{}", self.records.base_fix_record.len());
+                println!("base_height:{}", self.records.base_height);
+                println!("base_adv_record len:{}", self.records.range_adv_record.len());
+                println!("base_adv_record len:{}", self.records.range_fix_record.len());
+                println!("range_height:{}", self.records.range_height);
+                println!("select_adv_record len:{}", self.records.select_adv_record.len());
+                println!("select_fix_record len:{}", self.records.select_fix_record.len());
+                println!("select_height:{}", self.records.select_height);
+                println!("permutations len:{}", self.records.permutations.len());
 
                 match cells {
                     Some(cells) => {
