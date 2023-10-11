@@ -354,7 +354,8 @@ where
         _ => unreachable!(),
     };
 
-    for check in pl[0..absorb_start_idx].chunks(2).skip(1) {
+    for (i, check) in pl[0..absorb_start_idx].chunks(2).skip(1).enumerate() {
+        println!("ecc_assert_equal iter index:{}", i);
         ctx.ecc_assert_equal(&check[0], &check[1]);
     }
 
