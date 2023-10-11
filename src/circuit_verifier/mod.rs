@@ -355,7 +355,7 @@ where
     };
 
     for (i, check) in pl[0..absorb_start_idx].chunks(2).skip(1).enumerate() {
-        println!("ecc_assert_equal iter index:{}", i);
+        println!("ecc_assert_equal iter index:{}, {}", i, absorb_start_idx);
         ctx.ecc_assert_equal(&check[0], &check[1]);
     }
 
